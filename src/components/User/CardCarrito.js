@@ -9,13 +9,13 @@ export function CardCarrito(item){
                 <div class="my-4 flex gap-2">
                     <div class="flex gap-4 bg-gray-200 border border-gray-300 rounded-lg px-4">
                         <button>-</button>
-                        <span>1</span>
+                        <span>${item.cont}</span>
                         <button>+</button>
                     </div>
                     <button class="text-red-500 text-xs">Remove</button>
                 </div>
             </div>
-            <span>$8.99</span>
+            <span>$${item.price}</span>
         </div>
 
     `

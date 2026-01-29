@@ -1,26 +1,6 @@
-import { MenuGrig } from "../../components/User/menuGrid.js";
+import { MenuGrid } from "../../components/User/MenuGrid.js";
 import { Order } from "../../components/User/Order.js";
-const menu = [
-    {
-        id: 1,
-        name: "burguer double cheesse",
-        price: 100,
-        category: "Burguer"
-    },
-    {
-        id: 2,
-        name: "burguer double beacon",
-        price: 100,
-        category: "Burguer"
-    },
-    {
-        id: 2,
-        name: "burguer double beacon",
-        price: 100,
-        category: "Burguer"
-    },
-]
-export function Dashboard() {
+export async function Dashboard() {    
     return `
     <main class="p-5 grid grid-cols-12">
         <div class="col-span-9">
@@ -48,7 +28,7 @@ export function Dashboard() {
                     <p>Drinks</p>
                 </div>
             </div>
-            ${MenuGrig(menu)}
+            ${await MenuGrid()}
         </div>
         <div class="col-span-3">
          ${Order()}

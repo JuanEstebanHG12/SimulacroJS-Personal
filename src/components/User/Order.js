@@ -1,44 +1,20 @@
 import { CardCarrito } from "./CardCarrito.js"
 
 export function Order() {
-    const order = [
-        {
-            id: 1,
-            userId: 1,
-            items: [
-                {
-                    id: 1,
-                    name: "burguer double cheesse",
-                    price: 100,
-                    category: "Burguer"
-                },
-                {
-                    id: 1,
-                    name: "burguer double cheesse",
-                    price: 100,
-                    category: "Burguer"
-                },
-                {
-                    id: 1,
-                    name: "burguer double cheesse",
-                    price: 100,
-                    category: "Burguer"
-                },
-            ],
-            status: "pending",
-            creatAt: Date.now()
-        }
-    ]
+    const cart = JSON.parse(localStorage.getItem('cart')) || []
+    console.log(cart);
+    
+    
     return `
     <div class="h-fit p-2 border border-gray-300 rounded-lg ">
         <div class="header-order flex justify-between border-b-1 border-gray-200 pb-5">
             <div class="flex items-center font-semibold gap-1">
                 <p>Your order</p>
-                <span class="rounded-full h-6 w-6 p-1 bg-green-400 text-xs text-center">2</span>
+                <span class="rounded-full h-6 w-6 p-1 bg-green-400 text-xs text-center">${cart.length}</span>
             </div>
             <p class="font-thin text-green-600">Clear all</p>
         </div>
-        ${order[0].items.map(item => CardCarrito(item)).join('')}
+        ${cart.map(item => CardCarrito(item)).join('')}
         <div class="footer-order mt-2 flex flex-col">
             <div class="flex justify-between text-xs text-green-600">
                 <span>Subtotal</span>
