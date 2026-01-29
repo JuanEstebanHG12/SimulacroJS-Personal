@@ -16,13 +16,14 @@ export async function login(email) {
         //Delete password
         /* const userCopy = { ...userFind }
         delete userCopy.password */
-        if(userFind.length > 0){
-           sessionStorage.setItem('user', JSON.stringify(userFind))
+        if (userFind.length > 0) {
+            sessionStorage.setItem('user', JSON.stringify(userFind))
+            location.hash = '#/dashboard'
             return userFind
-        } else{
+        } else {
             throw new Error("User doesn't exist")
         }
-        
+
     } catch (error) {
         console.error(error);
 

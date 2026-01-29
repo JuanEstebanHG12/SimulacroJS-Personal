@@ -1,6 +1,6 @@
-import { route } from './src/router/router.js'
+import { router } from './src/router/router.js'
 
 
 
-window.addEventListener('hashchange', route)
-window.addEventListener('load', route)
+window.addEventListener('hashchange', router)
+window.addEventListener('load', router)

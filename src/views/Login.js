@@ -42,13 +42,9 @@ document.addEventListener('submit', async (e) => {
     e.preventDefault()
     if (e.target.id == "loginForm") {
         const form = e.target
-        const inputName = form.querySelector('#inp-name')
         const inpEmail = form.querySelector('#inp-email')
-        const role = form.querySelector('#slc-role')
-        console.log(
+        await login(inpEmail.value)
 
-           await login(inpEmail.value)
-        );
     }
 
 })

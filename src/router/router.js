@@ -2,17 +2,25 @@ import { render } from "../core/render.js";
 import { Login } from "../views/Login.js";
 
 
-export function route() {
-    const route = location.hash || "#/login"
-    
-    
+export function router() {
+    const hash = location.hash || "#/login"
+    const [ , route , param] = hash.split('/')
+    const user = sessionStorage.getItem('user')
+
+    if(user && route == 'login' || route == '') location.hash = '#/dashboard' //si user existe e intenta navegar al login o esta en una ruta sin has, redirigue al dashboard
+    if(!user && route!= 'login' || route == '') location.hash = '#/login' //si user no existe y está en alguna ruta diferente al login o sin hash, redirecciona al login
+
+    //renderizar segun rutas
     switch (route) {
-        case '#/login':        
+        case 'login':        
             render(Login())
             break;
     
+        case 'dashboard':        
+            render('<p>Dash</p>')
+            break;
+    
         default:
-            render(Login())
             break;
     }
 }
