@@ -1,19 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+import { CardCarrito } from "./CardCarrito.js"
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CDN google Icons -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- Tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="h-fit w-[50%] p-2 border border-gray-300 rounded-lg ">
+export function Order() {
+    const order = [
+        {
+            id: 1,
+            userId: 1,
+            items: [
+                {
+                    id: 1,
+                    name: "burguer double cheesse",
+                    price: 100,
+                    category: "Burguer"
+                },
+                {
+                    id: 1,
+                    name: "burguer double cheesse",
+                    price: 100,
+                    category: "Burguer"
+                },
+                {
+                    id: 1,
+                    name: "burguer double cheesse",
+                    price: 100,
+                    category: "Burguer"
+                },
+            ],
+            status: "pending",
+            creatAt: Date.now()
+        }
+    ]
+    return `
+    <div class="h-fit p-2 border border-gray-300 rounded-lg ">
         <div class="header-order flex justify-between border-b-1 border-gray-200 pb-5">
             <div class="flex items-center font-semibold gap-1">
                 <p>Your order</p>
@@ -21,7 +38,7 @@
             </div>
             <p class="font-thin text-green-600">Clear all</p>
         </div>
-        <div>Lista</div>
+        ${order[0].items.map(item => CardCarrito(item)).join('')}
         <div class="footer-order mt-2 flex flex-col">
             <div class="flex justify-between text-xs text-green-600">
                 <span>Subtotal</span>
@@ -42,7 +59,5 @@
                 </span>
             </button>
         </div>
-    </div>
-</body>
-
-</html>
+    </div>`
+}

@@ -8,6 +8,5 @@ export function render(content) {
         return app.innerHTML =` 
         ${user ? Navbar() : ""}
         ${content}
-        ${user ? "Footer" : ""}
     `
 }

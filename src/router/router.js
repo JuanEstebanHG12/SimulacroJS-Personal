@@ -1,5 +1,6 @@
 import { render } from "../core/render.js";
 import { Login } from "../views/Login.js";
+import { Dashboard } from "../views/User/Dasboard.js";
 
 
 export function router() {
@@ -17,7 +18,7 @@ export function router() {
             break;
     
         case 'dashboard':        
-            render('<p>Dash</p>')
+            render(Dashboard())
             break;
     
         default:
