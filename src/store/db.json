@@ -19,21 +19,24 @@
             "src_image": "",
             "name": "burguer double cheesse",
             "price": 100,
-            "category": "Burguer"
+            "category": "Burguer",
+            "cont" : 0
         },
         {
             "id": 2,
             "src_image": "",
             "name": "burguer double beacon",
             "price": 100,
-            "category": "Burguer"
+            "category": "Burguer",
+            "cont" : 0
         },
         {
             "id": 3,
             "src_image": "",
             "name": "burguer double meat",
             "price": 100,
-            "category": "Burguer"
+            "category": "Burguer",
+            "cont" : 0
         }
     ]
 }

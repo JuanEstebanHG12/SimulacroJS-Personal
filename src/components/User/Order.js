@@ -2,7 +2,6 @@ import { CardCarrito } from "./CardCarrito.js"
 
 export function Order() {
     const cart = JSON.parse(localStorage.getItem('cart')) || []
-    console.log(cart);
     
     
     return `
