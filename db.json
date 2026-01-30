@@ -1,43 +1,204 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": "1",
+      "name": "Juan Jo",
+      "email": "test@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Juan",
+      "email": "test2@gmail.com",
+      "role": "user"
+    }
+  ],
+  "menu": [
+    {
+      "id": "1",
+      "name": "burguer double cheesse",
+      "price": 100,
+      "category": "Burguer",
+      "cont": 0,
+      "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGAqYChtquA1BiCWMNMITy-hrzbVNWWehaSw&s"
+    },
+    {
+      "id": "2",
+      "name": "burguer double beacon",
+      "price": 100,
+      "category": "Burguer",
+      "cont": 0,
+      "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
+    },
+    {
+      "id": "3",
+      "name": "burguer double meat",
+      "price": 100,
+      "category": "Burguer",
+      "cont": 0,
+      "src_image": "https://media-cdn.tripadvisor.com/media/photo-s/1c/cd/af/5b/double-gorilla-burger.jpg"
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "093f",
+      "userId": "1",
+      "items": [
         {
-            "id": 1,
-            "name": "Juan Jo",
-            "email": "test@gmail.com",
-            "role": "admin"
+          "id": "1",
+          "name": "burguer double cheesse",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGAqYChtquA1BiCWMNMITy-hrzbVNWWehaSw&s"
         },
         {
-            "id": 2,
-            "name": "Juan",
-            "email": "test2@gmail.com",
-            "role": "user"
+          "id": "2",
+          "name": "burguer double beacon",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 4,
+          "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
+        },
+        {
+          "id": "3",
+          "name": "burguer double meat",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://media-cdn.tripadvisor.com/media/photo-s/1c/cd/af/5b/double-gorilla-burger.jpg"
         }
-    ],
-    "menu": [
+      ],
+      "total": 648,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    },
+    {
+      "id": "64ad",
+      "userId": "1",
+      "items": [
         {
-            "id": 1,
-            "name": "burguer double cheesse",
-            "price": 100,
-            "category": "Burguer",
-            "cont" : 0,
-            "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGAqYChtquA1BiCWMNMITy-hrzbVNWWehaSw&s"
-        },
-        {
-            "id": 2,
-            "name": "burguer double beacon",
-            "price": 100,
-            "category": "Burguer",
-            "cont" : 0,
-            "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
-        },
-        {
-            "id": 3,
-            "name": "burguer double meat",
-            "price": 100,
-            "category": "Burguer",
-            "cont" : 0,
-            "src_image": "https://media-cdn.tripadvisor.com/media/photo-s/1c/cd/af/5b/double-gorilla-burger.jpg"
+          "id": "2",
+          "name": "burguer double beacon",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
         }
-    ],
-    "pedidos":[]
+      ],
+      "total": 108,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    },
+    {
+      "id": "1b35",
+      "userId": "1",
+      "items": [
+        {
+          "id": "3",
+          "name": "burguer double meat",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://media-cdn.tripadvisor.com/media/photo-s/1c/cd/af/5b/double-gorilla-burger.jpg"
+        }
+      ],
+      "total": 108,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    },
+    {
+      "id": "5089",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "burguer double beacon",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
+        }
+      ],
+      "total": 108,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    },
+    {
+      "id": "23d8",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "burguer double beacon",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
+        }
+      ],
+      "total": 108,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    },
+    {
+      "id": "a646",
+      "userId": "1",
+      "items": [
+        {
+          "id": "3",
+          "name": "burguer double meat",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://media-cdn.tripadvisor.com/media/photo-s/1c/cd/af/5b/double-gorilla-burger.jpg"
+        }
+      ],
+      "total": 108,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    },
+    {
+      "id": "0da5",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "burguer double beacon",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
+        }
+      ],
+      "total": 108,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    },
+    {
+      "id": "b546",
+      "userId": "1",
+      "items": [
+        {
+          "id": "3",
+          "name": "burguer double meat",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://media-cdn.tripadvisor.com/media/photo-s/1c/cd/af/5b/double-gorilla-burger.jpg"
+        },
+        {
+          "id": "2",
+          "name": "burguer double beacon",
+          "price": 100,
+          "category": "Burguer",
+          "cont": 1,
+          "src_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzU14ulsAThrldLVvQxggnrXPzbM9bGVdUg&s"
+        }
+      ],
+      "total": 216,
+      "status": "active",
+      "createdAt": "5/1/2026"
+    }
+  ]
 }

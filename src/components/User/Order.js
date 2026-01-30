@@ -49,19 +49,41 @@ document.addEventListener('click', async (e) => {
     }
 
     if (e.target.id == "confirm-order") {
-        confirmOrder()
+        await confirmOrder()
     }
 })
 
-function confirmOrder() {
+/* async function confirmOrder() {
     const cart = JSON.parse(localStorage.getItem('cart'))
     const total = CalculateSubtotal(cart) + CalculateTax(cart)        
     if (cart) {
         createOrders(cart, total)
-        console.log(cart);
+        render(await Dashboard())
     }
     else{
         console.log("error");
     }
         
 }
+ */
+// ...existing code...
+async function confirmOrder() {
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    if (!cart || cart.length === 0) {
+        console.log("No hay productos en el carrito")
+        return
+    }
+
+    const total = CalculateSubtotal(cart) + CalculateTax(cart)
+
+    // Esperar la creación de la orden y verificar el resultado
+    const res = await createOrders(cart, total)
+    if (res && res.ok) {
+        // createOrders ya elimina el cart si response.ok, pero aseguramos limpieza
+        localStorage.removeItem('cart')
+        render(await Dashboard())
+    } else {
+        console.error("Error creating order", res)
+    }
+}
+// ...existing code...

@@ -22,7 +22,7 @@ export async function createOrders(ordersList,total) {
         headers: {
             "Content-type": "application/json"
         },
-        body: order
+        body: JSON.stringify(order)
     })
     
     if (response.ok) {
