@@ -1,3 +1,4 @@
+import { CalculateSubtotal, CalculateTax } from "../../utils/utils.js"
 import { CardCarrito } from "./CardCarrito.js"
 
 export function Order() {
@@ -17,15 +18,15 @@ export function Order() {
         <div class="footer-order mt-2 flex flex-col">
             <div class="flex justify-between text-xs text-green-600">
                 <span>Subtotal</span>
-                <span>$12.98</span>
+                <span>$${CalculateSubtotal(cart)}</span>
             </div>
             <div class="flex justify-between text-xs text-green-600">
                 <span>Tax(8%)</span>
-                <span>$1.04</span>
+                <span>$${CalculateTax(cart)}</span>
             </div>
             <div class="flex justify-between border-t border-gray-200 border-dashed mt-2">
                 <span>Total</span>
-                <span>$14.20</span>
+                <span>$${CalculateSubtotal(cart) + CalculateTax(cart)}</span>
             </div>
             <button class="flex justify-center items-center bg-green-500 mx-4 py-2 mt-2 rounded-lg">
                 Confirm Order

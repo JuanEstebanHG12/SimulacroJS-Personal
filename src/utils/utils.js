@@ -1,0 +1,18 @@
+function CalculateSubtotal(cart) {
+    if (cart.length > 0){
+        const subTotal = cart.reduce((a, b) => Number(a) + (Number(b.price)* Number(b.cont)), 0)
+        return subTotal
+    }
+    return 0
+}
+
+function CalculateTax(cart){
+    const sub = CalculateSubtotal(cart)
+    return sub * 0.08
+    
+}
+
+export {
+    CalculateSubtotal,
+    CalculateTax
+}
