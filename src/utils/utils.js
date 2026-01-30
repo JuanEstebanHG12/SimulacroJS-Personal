@@ -11,8 +11,18 @@ function CalculateTax(cart){
     return sub * 0.08
     
 }
+function getDate(){
+    const fechaObject = new Date()
+    const day = fechaObject.getDay()
+    const month = fechaObject.getMonth()+1
+    const year = fechaObject.getFullYear()
+    
+
+    return `${day}/${month}/${year}`
+}
 
 export {
     CalculateSubtotal,
-    CalculateTax
+    CalculateTax,
+    getDate
 }

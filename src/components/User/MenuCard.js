@@ -7,7 +7,7 @@ export function MenuCard(item) {
     return `
     <div class="shadow-md relative w-[90%] h-full bg-white rounded-[0.8vw] flex flex-col items-center">
                 <span class="absolute bg-gray-100 rounded-lg font-semibold text-xs py-1 px-3 top-2 left-3">${item.category}</span>
-                <img class="rounded-t-[0.7vw]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGAqYChtquA1BiCWMNMITy-hrzbVNWWehaSw&s"/>
+                <img class="h-[50%] w-full rounded-t-[0.7vw]" src='${item.src_image}'/>
                 <div class="p-2 flex flex-col">
 
                     <div class="flex font-extrabold gap-1">
