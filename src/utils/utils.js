@@ -1,3 +1,10 @@
+export const API  = {
+    BASE_API: 'http://localhost:3000',
+    USERS: 'users',
+    ORDERS : 'pedidos',
+    MENU : 'menu'
+} 
+
 function CalculateSubtotal(cart) {
     if (cart.length > 0 && cart) {
         const subTotal = cart.reduce((a, b) => Number(a) + (Number(b.price) * Number(b.cont)), 0)

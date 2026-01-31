@@ -1,6 +1,7 @@
 import { render } from "../core/render.js";
 import { Login } from "../views/Login.js";
 import { Dashboard } from "../views/User/Dasboard.js";
+import { MyOrders } from "../views/User/MyOrders.js";
 
 
 export async function router() {
@@ -13,22 +14,11 @@ export async function router() {
 
     const routes = {
         'login' : Login,
-        'dashboard' : Dashboard
+        'dashboard' : Dashboard,
+        'recents-orders' : MyOrders
     }
     //renderizar segun rutas
     const renderView = routes[route]
 
     render(await renderView())
-    /* switch (route) {
-        case 'login':        
-            render(await Login())
-            break;
-    
-        case 'dashboard':        
-            render(await Dashboard())
-            break;
-    
-        default:
-            break;
-    } */
 }

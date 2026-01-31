@@ -9,8 +9,8 @@ export function Navbar(){
         </div>
         <nav>
             <ul class="flex gap-8">
-                <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="">Menu</a></li>
-                <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="">My orders</a></li>
+                <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="#/dashboard">Menu</a></li>
+                <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="#/recents-orders">My orders</a></li>
                 <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="">Profile</a></li>
             </ul>
         </nav>
