@@ -41,3 +41,23 @@ export async function getMyOrders(userId) {
         console.error(error);
     }
 }
+export async function getOrders() {
+    try {
+        const response = await fetch(`${API.BASE_API}/${API.ORDERS}`)
+        const data = await response.json()
+        if (!response.ok) throw new Error('Error al obtener datos')
+        return data
+    } catch (error) {
+        console.error(error);
+    }
+}
+export async function getOrdersById(id) {
+    try {
+        const response = await fetch(`${API.BASE_API}/${API.ORDERS}/${id}`)
+        const data = await response.json()
+        if (!response.ok) throw new Error('Error al obtener datos')
+        return data
+    } catch (error) {
+        console.error(error);
+    }
+}

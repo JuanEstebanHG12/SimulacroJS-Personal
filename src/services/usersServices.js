@@ -31,3 +31,14 @@ export async function login(email) {
 
     }
 }
+
+export async function getUserById(id) {
+    try {
+        const response = await fetch(`${API.BASE_API}/${API.USERS}/${id}`)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error(error);
+    }
+
+}
