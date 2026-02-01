@@ -1,9 +1,9 @@
-export const API  = {
+export const API = {
     BASE_API: 'http://localhost:3000',
     USERS: 'users',
-    ORDERS : 'pedidos',
-    MENU : 'menu'
-} 
+    ORDERS: 'pedidos',
+    MENU: 'menu'
+}
 
 function CalculateSubtotal(cart) {
     if (cart.length > 0 && cart) {
@@ -13,8 +13,8 @@ function CalculateSubtotal(cart) {
     return 0
 }
 
-function CalculateTax(cart) { 
-    
+function CalculateTax(cart) {
+
     if (cart.length > 0 && cart) {
         const sub = CalculateSubtotal(cart)
         return sub * 0.08
@@ -24,11 +24,9 @@ function CalculateTax(cart) {
 }
 function getDate() {
     const fechaObject = new Date()
-    const day = fechaObject.getDay()
+    const day = fechaObject.getDate()
     const month = fechaObject.getMonth() + 1
     const year = fechaObject.getFullYear()
-
-
     return `${day}/${month}/${year}`
 }
 

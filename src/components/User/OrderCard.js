@@ -1,5 +1,4 @@
 export function OrderCard(ordersList){
-    console.log(ordersList);
      const status = {
             'pending' : '<div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">⏱️</div>' ,
             'delivered' : '<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">🚚</div>',
