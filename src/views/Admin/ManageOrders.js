@@ -1,11 +1,23 @@
 import { CardOrder } from "../../components/Admin/CardOrder.js"
 import { OrderDetail } from "../../components/Admin/OrderDetail.js"
 import { getOrders } from "../../services/ordersServices.js"
+import { getUsers } from "../../services/usersServices.js"
+import { getDate } from "../../utils/utils.js"
 
-export async function ManageOrders(){
+export async function ManageOrders() {
   const orders = await getOrders()
+
+  const pendingsOrders = orders.filter(order => order.status == 'pending').length
   
-    return`
+  const dateToday = getDate() 
+
+  const todaysRevenue = orders.filter(order => order.createdAt == dateToday).reduce((a ,b) => a + Number(b.total),0)
+
+  const users = await getUsers()
+  
+  
+
+  return `
     <!-- STATS -->
 <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
   <div class="bg-white p-5 rounded-xl border shadow-sm">
@@ -15,12 +27,12 @@ export async function ManageOrders(){
 
   <div class="bg-white p-5 rounded-xl border shadow-sm">
     <p class="text-sm text-gray-500">Pending Orders</p>
-    <p class="text-2xl font-bold text-yellow-600">15</p>
+    <p class="text-2xl font-bold text-yellow-600">${pendingsOrders}</p>
   </div>
 
   <div class="bg-white p-5 rounded-xl border shadow-sm">
     <p class="text-sm text-gray-500">Today's Revenue</p>
-    <p class="text-2xl font-bold text-green-600">$3,450</p>
+    <p class="text-2xl font-bold text-green-600">$${todaysRevenue}</p>
   </div>
 </section>
 
@@ -53,8 +65,8 @@ export async function ManageOrders(){
       </thead>
 
       <tbody>
-       ${orders.map(o => CardOrder(o.id)
-       ).join('')}
+       ${orders.map(order => CardOrder(order, users)
+  ).join('')}
 
         
       </tbody>
@@ -72,7 +84,7 @@ export async function ManageOrders(){
     </div>
   </div>
 
-  ${OrderDetail()}
+  ${OrderDetail(orders)}
 
     `
 }

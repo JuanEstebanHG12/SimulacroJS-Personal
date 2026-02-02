@@ -30,7 +30,12 @@ function getDate() {
     return `${day}/${month}/${year}`
 }
 
+
+function capitalizeCase(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1)
+}
 export {
+    capitalizeCase,
     CalculateSubtotal,
     CalculateTax,
     getDate

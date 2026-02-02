@@ -61,3 +61,15 @@ export async function getOrdersById(id) {
         console.error(error);
     }
 }
+
+export async function updateStatusOrder(id, statusUpdate) {
+    fetch(`${API.BASE_API}/${API.ORDERS}/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            status: statusUpdate
+        })
+    })
+}
