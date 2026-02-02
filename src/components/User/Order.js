@@ -53,20 +53,8 @@ document.addEventListener('click', async (e) => {
     }
 })
 
-/* async function confirmOrder() {
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    const total = CalculateSubtotal(cart) + CalculateTax(cart)        
-    if (cart) {
-        createOrders(cart, total)
-        render(await Dashboard())
-    }
-    else{
-        console.log("error");
-    }
-        
-}
- */
-// ...existing code...
+
+
 async function confirmOrder() {
     const cart = JSON.parse(localStorage.getItem('cart'))
     if (!cart || cart.length === 0) {
@@ -86,4 +74,3 @@ async function confirmOrder() {
         console.error("Error creating order", res)
     }
 }
-// ...existing code...

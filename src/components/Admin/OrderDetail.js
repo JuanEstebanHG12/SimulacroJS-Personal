@@ -48,24 +48,37 @@ export function OrderDetail() {
     `
 }
 
+// Función que actualiza los detalles de la orden en el DOM
 export function updateDetail(order, user) {
+  // Función auxiliar para generar el HTML de cada item del menú
   const lista = (item) =>
     `<div class="flex justify-between">
         <span>${item.name} x${item.cont}</span>
         <span>$${item.price}</span>
         <span class="text-gray-400">$${item.price * item.cont}</span>
       </div>`
+
+  // Mostramos el panel lateral removiendo la clase 'hidden'
   document.querySelector('aside').classList.remove('hidden')
+
+  // Actualizamos la información del usuario
   document.querySelector('.text-xs.text-gray-500').textContent = capitalizeCase(user.role)
   document.querySelector('#user-name').textContent = capitalizeCase(user.name)
   document.querySelector('#user-email').textContent = capitalizeCase(user.email)
+
+  // Actualizamos el estado de la orden
   document.querySelector('#order-status').classList.add(`${order.status}`)
   document.querySelector('#order-status').textContent = capitalizeCase(order.status)
+
+  // Generamos y mostramos la lista de items del menú
   document.querySelector('#menu-list').innerHTML = order.items.map(item => lista(item)).join('')
+
+  // Calculamos y mostramos el subtotal, impuesto y total
   document.querySelector('#subtotal-detail').textContent = `$${CalculateSubtotal(order.items)}`
   document.querySelector('#tax-detail').textContent = `$${CalculateTax(order.items)}`
   document.querySelector('#total-detail').textContent = `$${CalculateTax(order.items) + CalculateSubtotal(order.items)}`
 
+  // Creamos la sección de actualización de estado
   const updateSection = document.querySelector('#status-details')
   updateSection.innerHTML = `  <p>UPDATE STATUS</p>
       <div class="flex gap-2">
@@ -78,9 +91,11 @@ export function updateDetail(order, user) {
         <button class="w-[40%] rounded bg-green-500">UPDATE ✅</button>
       </div>`
 
+  // Agregamos el evento click al botón de actualizar
   const buttonUpdate = updateSection.querySelector('button')
   const selectUpdate = updateSection.querySelector('select')
   buttonUpdate.addEventListener('click', async () => {
+    // Actualizamos el estado de la orden y re-renderizamos la vista
     updateStatusOrder(order.id, selectUpdate.value)
     render(await ManageOrders())
   })
