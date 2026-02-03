@@ -3,7 +3,8 @@ export function OrderCard(ordersList){
             'pending' : '<div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center">⏱️</div>' ,
             'delivered' : '<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">🚚</div>',
             'canceled' : '<div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">✖</div>',
-            'preparing' : '<div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">🍳</div>'
+            'preparing' : '<div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">🍳</div>',
+            'ready' : '<div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">✔️</div>'
         }
     
     

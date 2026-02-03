@@ -12,8 +12,16 @@ export function Navbar(){
                 <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="#/dashboard">Menu</a></li>
                 <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="#/recents-orders">My orders</a></li>
                 <li class="font-bold relative"><a class="after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300" href="">Profile</a></li>
-            </ul>
+                <li class="font-bold relative"><button id="logout" class="hover:pointer after:content-[''] after:h-1 after:w-0 after:bg-green-500 after:absolute after:left-0 after:bottom-[-2px] hover:after:w-full after:transition-all after:duration-300">Logout</button></li>
+                </ul>
         </nav>
     </header>
     `
+
 }
+document.addEventListener('click', (e) =>{
+    if (e.target.id == 'logout') {
+        sessionStorage.clear()
+        location.hash = '#/login'
+    }
+})
